@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./js/point2d.js"></script>
+    <script src="./js/animator.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/collider.js"></script>
+    <script src="./js/movement.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/tree.js"></script>
+    <script src="./js/rock.js"></script>
+    <script src="./js/spawner.js"></script>
+    <script src="./js/endlessRunnerGame.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>
+    <script>
+
+        // Define player parameters.
+        const playerOptions = {
+            width: 30,
+            height: 50,
+            startX: 40,
+            jumpPower: 15,
+            jumpHeight: 220,
+            gravity: 12,
+            playSpeed: 2,
+            showTime: 5,
+            imageSources: [
+                "./images/player1.png",
+                "./images/player2.png",
+                "./images/player3.png",
+                "./images/player4.png"
+            ]
+        }
+
+        // Define spawner parameters.
+        const spawnerOptions = {
+            width: 30,
+            height: 50,
+            minLength: 180,
+            maxlength: 220,
+            speed: 5,
+            maxActive: 2,
+            obstacles: [
+                Tree.create(-130, 0, 8, 32, 15),
+                Tree.create(-130, 0, 8, 32, 15),
+                Rock.create(-170, 0, 28, 25, 5),
+                Rock.create(-170, 0, 28, 25, 5)
+            ]
+        }
+
+        // Define difficulty.
+        const difficulty = {
+            speedIncreasement: .01,
+            maxIncreasement: 5
+        }
+
+        // Create an instance of the game.
+        const frameRate = 30;
+        const groundOffset = 20;
+        const endlessRunnerGame = new EndlessRunnerGame("canvas", frameRate, groundOffset, playerOptions, spawnerOptions, difficulty);
+
+        // Create an instance of the game.
+        endlessRunnerGame.start();
+
+    </script>
+</body>
+
+</html>
