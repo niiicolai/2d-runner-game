@@ -10,9 +10,6 @@ class Tree {
         // passed parameters.
         this.w = this.calculateWidth();
         this.h = this.calculateHeight();
-
-        // Add a collider.
-        this.collider = new Collider(position, this.w, this.h);
     }
 
     // A method that returns the width based on

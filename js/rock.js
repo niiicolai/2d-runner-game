@@ -5,9 +5,6 @@ class Rock {
         this.noOfParts = noOfParts;
         this.w = w;
         this.h = h;
-
-        // Add a collider
-        this.collider = new Collider(position, w, h);
     }
 
     // A method that can be used to draw the rock.
