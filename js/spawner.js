@@ -73,7 +73,7 @@ class Spawner {
     getInactiveObstacles() {
         const inactiveObstacles = [];
         for (let i = 0; i < this.obstacles.length; i++) {
-            if (this.obstacles[i].position.x < 0)
+            if (this.obstacles[i].position.x < 0 || this.obstacles[i].x > this.startX)
                 inactiveObstacles.push(this.obstacles[i]);
         }
         return inactiveObstacles;
